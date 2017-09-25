@@ -147,7 +147,6 @@ if(isset($_SESSION['username'])){   /*这句话是为了判断 如果用户直�
 
 
 <!--Carousel-->
-<div  class="container" style="width: 700px;height: 700px">
     <div id="myCarousel" class="carousel slide text-center " data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -175,7 +174,6 @@ if(isset($_SESSION['username'])){   /*这句话是为了判断 如果用户直�
             <span class="sr-only">Next</span>
         </a>
     </div>
-</div>
 
 <!--Price Container-->
 <div id="pricing" class="container-fluid">

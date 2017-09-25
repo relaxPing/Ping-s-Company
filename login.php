@@ -63,7 +63,7 @@ if(isset($_POST['submit'])){
                         <p></p>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input type="text" class="form-control" placeholder="Password " id="password" name="password">
+                            <input type="password" class="form-control" placeholder="Password " id="password" name="password">
                         </div>
                         <p></p>
                         <input type="submit" class="btn btn-block" id="submit" name="submit" value="Sign Up">
