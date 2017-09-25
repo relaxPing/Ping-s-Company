@@ -30,8 +30,8 @@ if(isset($_SESSION['username'])){   /*这句话是为了判断 如果用户直�
     <script src="jquery-3.2.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <link type="text/css" rel="stylesheet" href="index.css">
+    <title>Ping's Company</title>
 
-    <title>Title</title>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 <div class="jumbotron text-center">
@@ -307,11 +307,14 @@ if(isset($_SESSION['username'])){   /*这句话是为了判断 如果用户直�
                 <li><a href="#portfolio">PORTFOLIO</a></li>
                 <li><a href="#pricing">PRICING</a></li>
                 <li><a href="#contact">CONTACT</a></li>
-                <?php if(isset($_SESSION['username'])){?>
-                    <li><a href="welcome.php" id="signIn"><?php echo "Hi,".$_SESSION['username'];?></a></li>
-                <?php }else{ ?>
-                    <li><a href="login.php" id="signIn">SIGN IN</a></li>
-                <?php } ?>
+                <li><a href="login.php" id="signIn">SIGN IN</a>
+
+                <script>
+                    if("<?php echo isset($_SESSION['username'])?>") {
+                        document.getElementById("signIn").innerHTML = "<?php echo 'Hi,'.$_SESSION['username']?>";
+                        document.getElementById("signIn").href = "welcome.php";
+                    }
+                </script>
             </ul>
         </div>
     </div>
