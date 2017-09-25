@@ -46,8 +46,8 @@ if(isset($_POST['submit'])){
 
 
 <div class="row LogIn">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
         <div class="container-fluid">
             <div class="panel panel-default">
                 <div class="panel-heading">Sign Up</div>
@@ -73,7 +73,7 @@ if(isset($_POST['submit'])){
             </div>
         </div>
     </div>
-    <div class="col-sm-4"></div>
+    <div class="col-sm-3"></div>
 </div>
 
 
