@@ -66,7 +66,7 @@ if(isset($_POST['submit'])){
                             <input type="password" class="form-control" placeholder="Password " id="password" name="password">
                         </div>
                         <p></p>
-                        <input type="submit" class="btn btn-block" id="submit" name="submit" value="Sign Up">
+                        <input type="submit" class="btn btn-block" id="submit" name="submit" value="Sign In">
                         <!--<button type="button" class="btn btn-block">Sign In</button>-->
                         <div class="row">
                             <div class="col-sm-6"><a href="#">Forget your password?</a></div>

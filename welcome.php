@@ -2,7 +2,7 @@
 session_start();
 if(isset($_SESSION['username'])){   /*这句话是为了判断 如果用户直接进这个url会被执行else 转回login页面*/
     $username = $_SESSION['username'];
-    if((time() - $_SESSION['last_time']) > 60){
+    if((time() - $_SESSION['last_time']) > 30){
         header("Location:logout.php");
     }else{
         $_SESSION['last_time'] = time();

@@ -2,22 +2,12 @@
 session_start();
 if(isset($_SESSION['username'])){   /*这句话是为了判断 如果用户直接进这个url会被执行else 转回login页面*/
     $username = $_SESSION['username'];
-    if((time() - $_SESSION['last_time']) > 60){
+    if((time() - $_SESSION['last_time']) > 30){
         header("Location:logout.php");
     }else{
         $_SESSION['last_time'] = time();
-        /*这里写JS代码来操作用户名的显示*/
-        /*echo "<script language='JavaScript'>";
-        echo "$('#signIn').attr(\"href\",\"http://www.qq.com\")";
-        echo "</script>>";
-        echo "<script language='JavaScript'>";
-        echo "alert('haha')";
-        echo "</script>";
-       echo "$username";*/
     }
-}/*else{
-    header("Location:index.php");
-}*/
+}
 
 ?>
 
@@ -36,7 +26,7 @@ if(isset($_SESSION['username'])){   /*这句话是为了判断 如果用户直�
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 <div class="jumbotron text-center">
     <h1>Ping's Company</h1>
-    <p>We specialize in blablabla</p>
+    <!--<p>We specialize in blablabla</p>-->
     <form class="form-inline">
         <div class="form-group">
             <div class="input-group">
@@ -49,8 +39,56 @@ if(isset($_SESSION['username'])){   /*这句话是为了判断 如果用户直�
     </form>
 </div>
 
+<!--新的Container-About-->
+<div id="news" class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8">
+            <h2><strong>NEWS</strong></h2>
+            <h3>click <button class="btn btn-default btn-mg" onclick="{location.href=''}">Here</button> to visit my new web application</h3>
+            <p style="font-size: medium">That application is a Single-page application(SPA) Which means the web site that interacts with the user by dynamically rewriting the current page rather than loading entire new pages from a server. That approach avoids interruption of the user experience between successive pages, making the application behave more like a desktop application.</p>
+            <p>The page does not reload at any point in the process, nor does control transfer to another page</p>
+            <h3>Tools:HTML/CSS, JavaScript, Bootstrap, AngularJS, Linux, Apache, AWS EC2</h3>
+        </div>
+        <div class="col-sm-4"><span class="glyphicon glyphicon-signal logo"></span></div>
+    </div>
+
+</div>
+<div id="about" class="container-fluid bg-gray">
+    <div class="row">
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-globe logo"></span>
+        </div>
+        <div class="col-sm-8"><h2><strong>ABOUT</strong></h2>
+            <h4>This application implemented by using LAMP(Linux, Apache, MySQL, PHP) model,The SignIn/SignUp system with the function of 30 seconds automatically session Timeout/Logout</h4>
+            <h4>Be the second registered user of this web site!Why second? Cause I am the First user!^_^               ---Ping Xin</h4>
+            <button class="btn btn-default btn-mg" onclick="{location.href='newuser.php'}">Sign Up</button>
+            <h3>Tools:HTML/CSS, JavaScript, Bootstrap, Linux, Apache, MySQL, PHP, AWS EC2</h3>
+        </div>
+    </div>
+</div>
+
+<!--Footer-->
+<footer class="text-center">
+    <!--data-toggle的tooltip是用来做鼠标划上去有提示字效果的-->
+    <a class="up-arrow" href="#" data-toggle="tooltip" title="TO TOP">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+    <p>Made By Ping Xin</p>
+    <p><span class="glyphicon glyphicon-map-marker"></span> Dallas, TX</p>
+    <p><span class="glyphicon glyphicon-phone"></span>+0 682(248)0908</p>
+    <p><span class="glyphicon glyphicon-envelope"></span> xinpingxian@gmail.com</p>
+</footer>
+
+<script>
+    $(document).ready(function(){
+        // Initialize Tooltip
+        $('[data-toggle="tooltip"]').tooltip();
+    })
+</script>
+
+
 <!--Container-About-->
-<div id="about" class="container-fluid">
+<!--<div id="about" class="container-fluid">
     <div class="row">
         <div class="col-sm-8">
             <h2>About Company Page</h2>
@@ -72,10 +110,14 @@ if(isset($_SESSION['username'])){   /*这句话是为了判断 如果用户直�
             <p><strong>VISION:</strong>Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
     </div>
-</div>
+</div>-->
+
+
+
+
 
 <!--Container-Services-->
-<div id="services" class="container-fluid text-center">
+<!--<div id="services" class="container-fluid text-center">
     <h2>SERVICES</h2>
     <h4>What we offer</h4>
     <br>
@@ -114,10 +156,10 @@ if(isset($_SESSION['username'])){   /*这句话是为了判断 如果用户直�
             <p>Lorem ipsum dolor sit amet..</p>
         </div>
     </div>
-</div>
+</div>-->
 
 <!--Portfolio-->
-<div id="portfolio" class="container-fluid text-center bg-gray">
+<!--<div id="portfolio" class="container-fluid text-center bg-gray">
     <h2>Portfolio</h2><br>
     <h4>What we have created</h4>
     <div class="row text-center">
@@ -143,11 +185,11 @@ if(isset($_SESSION['username'])){   /*这句话是为了判断 如果用户直�
             </div>
         </div>
     </div>
-</div>
+</div>-->
 
 
 <!--Carousel-->
-    <div id="myCarousel" class="carousel slide text-center " data-ride="carousel">
+    <!--<div id="myCarousel" class="carousel slide text-center " data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -173,10 +215,10 @@ if(isset($_SESSION['username'])){   /*这句话是为了判断 如果用户直�
             <span class="glyphicon glyphicon-chevron-right"></span>
             <span class="sr-only">Next</span>
         </a>
-    </div>
+    </div>-->
 
 <!--Price Container-->
-<div id="pricing" class="container-fluid">
+<!--<div id="pricing" class="container-fluid">
     <div class="text-center">
         <h2>Pricing</h2>
         <h4>Choose a payment plan that works for you</h4>
@@ -240,10 +282,10 @@ if(isset($_SESSION['username'])){   /*这句话是为了判断 如果用户直�
             </div>
         </div>
     </div>
-</div>
+</div>-->
 
 <!--Contact Container-->
-<div id="contact" class="container-fluid bg-gray ">
+<!--<div id="contact" class="container-fluid bg-gray ">
     <div class="text-center">
         <h2>CONTACT</h2><br>
     </div>
@@ -271,10 +313,10 @@ if(isset($_SESSION['username'])){   /*这句话是为了判断 如果用户直�
             </div>
         </div>
     </div>
-</div>
+</div>-->
 
 <!--Google Map-->
-<div id="googleMap" style="height: 400px;width:100%"></div>
+<!--<div id="googleMap" style="height: 400px;width:100%"></div>
 <script>
     function myMap() {
         var myCenter = new google.maps.LatLng(32.724042, -97.119310);
@@ -284,7 +326,7 @@ if(isset($_SESSION['username'])){   /*这句话是为了判断 如果用户直�
         marker.setMap(map);
     }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUdYJHOMfpOew0BnVVIH9j-GJnmOQXHB8&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUdYJHOMfpOew0BnVVIH9j-GJnmOQXHB8&callback=myMap"></script>-->
 
 
 <!--NavBar-->
@@ -300,11 +342,12 @@ if(isset($_SESSION['username'])){   /*这句话是为了判断 如果用户直�
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="#news">NEWS</a></li>
                 <li><a href="#about">ABOUT</a></li>
-                <li><a href="#services">SERVICES</a></li>
+                <!--<li><a href="#services">SERVICES</a></li>
                 <li><a href="#portfolio">PORTFOLIO</a></li>
                 <li><a href="#pricing">PRICING</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="#contact">CONTACT</a></li>-->
                 <li><a href="login.php" id="signIn">SIGN IN</a>
 
                 <script>
